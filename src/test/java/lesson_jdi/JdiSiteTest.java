@@ -1,6 +1,7 @@
 package lesson_jdi;
 
 import com.epam.jdi.light.driver.get.DriverData;
+import lesson_jdi.entities.MetalsAndColorsInput;
 import lesson_jdi.entities.Users;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
@@ -22,10 +23,13 @@ public class JdiSiteTest {
     }
 
     @Test
-    public void loginTest() {
+    public void testScenario() {
         JdiSite.open();
         JdiSite.homePage.login(Users.PETER);
-        JdiSite.homePage.checkLoggedin(Users.PETER);
+        JdiSite.homePage.assertLoggedIn(Users.PETER);
+        JdiSite.homePage.goToMetalAndColorsPage();
+        JdiSite.metalsAndColorsPage.submitData(MetalsAndColorsInput.TESTDATA1);
+        JdiSite.metalsAndColorsPage.assertResultSection(MetalsAndColorsInput.TESTDATA1);
     }
 
     @AfterClass
