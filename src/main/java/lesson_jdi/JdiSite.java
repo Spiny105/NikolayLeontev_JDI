@@ -1,8 +1,6 @@
 package lesson_jdi;
 
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
-import com.epam.jdi.light.elements.pageobjects.annotations.Title;
-import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import lesson_jdi.pages.JdiHomePage;
 import lesson_jdi.pages.MetalsAndColorsPage;
 

@@ -1,14 +1,14 @@
 package lesson_jdi.entities;
 
-import lombok.AllArgsConstructor;
+import com.epam.jdi.tools.DataClass;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
-public enum Users {
-    PETER("epam", "1234", "PITER CHAILOVSKII");
+@Setter
+public class Users extends DataClass<Users> {
 
-    private final String login;
-    private final String password;
-    private final String fullName;
+    private String login;
+    private String password;
+    private String fullName;
 }
