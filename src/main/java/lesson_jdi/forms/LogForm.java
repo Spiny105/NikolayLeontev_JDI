@@ -9,6 +9,7 @@ import lesson_jdi.enums.ElementsOfNature;
 import lesson_jdi.enums.Metals;
 import lesson_jdi.enums.Vegetables;
 
+// TODO This is not a form.
 public class LogForm extends Form<MetalsAndColorsInput> {
 
     @FindBy(xpath = "//li[@class='summ-res']")
@@ -26,6 +27,7 @@ public class LogForm extends Form<MetalsAndColorsInput> {
     @FindBy(xpath = "//li[@class='sal-res']")
     private Label vegRecord;
 
+    // TODO What is the reason of this methods ?
     public Label getSummaryRecord() {
         return summaryRecord;
     }
