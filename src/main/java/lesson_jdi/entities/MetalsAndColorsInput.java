@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public enum MetalsAndColorsInput {
 
+    // TODO This enum doesn't following java code convention.
     TESTDATA1(3, 8, Arrays.asList(ElementsOfNature.WATER, ElementsOfNature.FIRE), Colors.RED,
             Metals.SELEN, Arrays.asList(Vegetables.CUCUMBER, Vegetables.TOMATO));
 

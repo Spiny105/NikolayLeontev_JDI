@@ -7,8 +7,10 @@ import lesson_jdi.enums.HeaderItems;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
+// TODO What is the reason of 'extends Form<Users>' here ?
 public class HeaderItemsForm extends Form<Users> {
 
+    // TODO This locator can be simplified.
     @FindBy(xpath = "//*[@class='uui-navigation nav navbar-nav m-l8']")
     private UIElement menu;
 

@@ -14,6 +14,7 @@ import org.hamcrest.Matchers;
 @Title("Metal and Colors")
 public class MetalsAndColorsPage extends WebPage {
 
+    // TODO What do you mean by 'mainForm' ?
     private MetalsAndColorsMainForm mainForm;
     private LogForm logForm;
 
@@ -21,6 +22,8 @@ public class MetalsAndColorsPage extends WebPage {
         mainForm.selectSummaryNumbers(input.getOdd(), input.getEven());
     }
 
+    // TODO You break up one of the OOP rule.
+    // All calls for mainForm should be encapsulate in it.
     public void submitData(MetalsAndColorsInput input){
         mainForm.selectSummaryNumbers(input.getOdd(), input.getEven());
         mainForm.clickOnElementsOfNature(input.getElementsOfNatures());
@@ -30,6 +33,7 @@ public class MetalsAndColorsPage extends WebPage {
         mainForm.submit();
     }
 
+    // TODO Same story line line 25
     public void assertResultSection(MetalsAndColorsInput input) {
         Integer sum = input.getOdd() + input.getEven();
         logForm.getSummaryRecord().shouldBe().text(Matchers.containsString(sum.toString()));
