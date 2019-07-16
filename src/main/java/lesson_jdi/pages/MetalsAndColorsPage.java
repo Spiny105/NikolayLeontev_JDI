@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO There is no testng available here, compilation error. Take a look on POM file.
+// TODO There is no testng available here, compilation error. Take a look on POM file. (fixed)
 import static org.testng.Assert.assertTrue;
 
 @Url("metals-and-colors.html")
@@ -24,7 +24,6 @@ public class MetalsAndColorsPage extends WebPage {
     @FindBy(xpath = "//*[@id='mCSB_2_container']/section[2]//li")
     private List<WebElement> logRecords;
 
-    // All calls for differentElementsForm should be encapsulate in it.
     public void submitData(MetalsAndColorsInput input) {
         differentElementsForm.submitData(input);
     }
