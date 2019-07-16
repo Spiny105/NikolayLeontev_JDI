@@ -13,8 +13,6 @@ import java.util.List;
 @Getter
 @Setter
 public class MetalsAndColorsInput extends DataClass<MetalsAndColorsInput> {
-
-    // TODO This enum doesn't following java code convention. (fixed)
     private Integer odd;
     private Integer even;
     private List<ElementsOfNature> elementsOfNatures;
@@ -22,5 +20,4 @@ public class MetalsAndColorsInput extends DataClass<MetalsAndColorsInput> {
     private Colors color;
     private Metals metal;
     private List<Vegetables> vegetables;
-
 }

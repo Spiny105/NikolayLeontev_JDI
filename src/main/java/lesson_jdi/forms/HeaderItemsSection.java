@@ -6,10 +6,8 @@ import lesson_jdi.enums.HeaderItems;
 import org.openqa.selenium.support.FindBy;
 
 
-// TODO What is the reason of 'extends Form<Users>' here ? (fixed)
 public class HeaderItemsSection extends Section {
 
-    // TODO This locator can be simplified. (fixed)
     @FindBy(css = ".m-l8")
     private Menu menu;
 
