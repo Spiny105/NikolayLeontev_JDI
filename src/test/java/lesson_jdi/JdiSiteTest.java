@@ -23,7 +23,6 @@ public class JdiSiteTest {
 
     @Test
     public void testScenario() {
-
         JdiSite.open();
         JdiSite.homePage.login(Defaults.DEFAULT_USER);
         JdiSite.homePage.assertLoggedIn(Defaults.DEFAULT_USER);

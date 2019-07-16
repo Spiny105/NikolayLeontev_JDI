@@ -15,11 +15,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-// TODO 1. This is completely prohibited to use raw selenium calls(like findElement) in PO ! (fixed)
 public class MetalsAndColorsDifferentElementsForm extends Form<MetalsAndColorsInput> {
 
-    // TODO 2. Basically, JDI has lots of type-field elements, like Button, Dropdown, Checkbox and so on. (fixed)
-    // Use this elements rather than just UIElement.
     @FindBy(xpath = "//*[@id='elements-checklist']//label[contains(text(), '%s')]")
     private UIElement elementsOfNatureCheckboxes;
 

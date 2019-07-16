@@ -12,25 +12,23 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// TODO There is no testng available here, compilation error. Take a look on POM file.
 import static org.testng.Assert.assertTrue;
 
 @Url("metals-and-colors.html")
 @Title("Metal and Colors")
 public class MetalsAndColorsPage extends WebPage {
 
-    // TODO What do you mean by 'mainForm' ? (fixed)
     private MetalsAndColorsDifferentElementsForm differentElementsForm;
 
-    @FindBy(xpath = "//*[@id=\"mCSB_2_container\"]/section[2]//li")
+    @FindBy(xpath = "//*[@id='mCSB_2_container']/section[2]//li")
     private List<WebElement> logRecords;
 
-    // TODO You break up one of the OOP rule. (fixed)
     // All calls for differentElementsForm should be encapsulate in it.
     public void submitData(MetalsAndColorsInput input) {
         differentElementsForm.submitData(input);
     }
 
-    // TODO Same story line line 25 (fixed)
     public void assertResultSection(MetalsAndColorsInput input) {
 
         List<String> stringRecods = logRecords.stream().map(x -> x.getText()).collect(Collectors.toList());
