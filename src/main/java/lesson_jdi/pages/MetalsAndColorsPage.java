@@ -5,14 +5,12 @@ import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import lesson_jdi.entities.MetalsAndColorsInput;
-import lesson_jdi.enums.Vegetables;
 import lesson_jdi.forms.MetalsAndColorsDifferentElementsForm;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO There is no testng available here, compilation error. Take a look on POM file. (fixed)
 import static org.testng.Assert.assertTrue;
 
 @Url("metals-and-colors.html")
@@ -31,14 +29,14 @@ public class MetalsAndColorsPage extends WebPage {
     public void assertResultSection(MetalsAndColorsInput input) {
 
         List<String> stringRecods = logRecords.stream().map(x -> x.getText()).collect(Collectors.toList());
-        Integer sum = input.getOdd() + input.getEven();
+        Integer sum = input.getSummary().get(0) + input.getSummary().get(1);
 
         assertTrue(stringRecods.contains("Summary: " + sum.toString()));
-        assertTrue(stringRecods.contains("Color: " + input.getColor().getItem()));
-        assertTrue(stringRecods.contains("Metal: " + input.getMetal().getItem()));
+        assertTrue(stringRecods.contains("Color: " + input.getColor()));
+        assertTrue(stringRecods.contains("Metal: " + input.getMetals()));
 
-        for (Vegetables vegetable : input.getVegetables()) {
-            assertTrue(stringRecods.stream().filter(x -> x.contains(vegetable.getItem())).findFirst().orElse(null) != null);
+        for (String vegetable : input.getVegetables()) {
+            assertTrue(stringRecods.stream().filter(x -> x.contains(vegetable)).findFirst().orElse(null) != null);
         }
     }
 }

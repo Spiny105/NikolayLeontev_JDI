@@ -13,11 +13,9 @@ import java.util.List;
 @Getter
 @Setter
 public class MetalsAndColorsInput extends DataClass<MetalsAndColorsInput> {
-    private Integer odd;
-    private Integer even;
-    private List<ElementsOfNature> elementsOfNatures;
-
-    private Colors color;
-    private Metals metal;
-    private List<Vegetables> vegetables;
+    private List<Integer> summary;
+    private List<String> elements;
+    private String color;
+    private String metals;
+    private List<String> vegetables;
 }

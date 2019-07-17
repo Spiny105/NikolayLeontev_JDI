@@ -7,10 +7,6 @@ import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
 import lesson_jdi.entities.MetalsAndColorsInput;
-import lesson_jdi.enums.Colors;
-import lesson_jdi.enums.ElementsOfNature;
-import lesson_jdi.enums.Metals;
-import lesson_jdi.enums.Vegetables;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -47,9 +43,9 @@ public class MetalsAndColorsDifferentElementsForm extends Form<MetalsAndColorsIn
     @FindBy(xpath = "//*[@id=\"submit-button\"]")
     private Button submit;
 
-    private void clickOnElementsOfNature(List<ElementsOfNature> elements) {
-        for (ElementsOfNature element : elements) {
-            elementsOfNatureCheckboxes.select(element.getItem());
+    private void clickOnElementsOfNature(List<String> elements) {
+        for (String element : elements) {
+            elementsOfNatureCheckboxes.select(element);
         }
     }
 
@@ -58,17 +54,17 @@ public class MetalsAndColorsDifferentElementsForm extends Form<MetalsAndColorsIn
         evenRadios.select(even.toString());
     }
 
-    private void selectColor(Colors color) {
-        colorsDroplist.select(color.getItem());
+    private void selectColor(String color) {
+        colorsDroplist.select(color);
     }
 
-    private void selectMetal(Metals metal) {
-        metalsDroplist.select(metal.getItem());
+    private void selectMetal(String metal) {
+        metalsDroplist.select(metal);
     }
 
-    private void selectVegetables(List<Vegetables> vegetables) {
-        for (Vegetables vegetable : vegetables) {
-            vegetablesDroplist.select(vegetable.getItem());
+    private void selectVegetables(List<String> vegetables) {
+        for (String vegetable : vegetables) {
+            vegetablesDroplist.select(vegetable);
         }
     }
 
@@ -78,10 +74,10 @@ public class MetalsAndColorsDifferentElementsForm extends Form<MetalsAndColorsIn
     }
 
     public void submitData(MetalsAndColorsInput input) {
-        selectSummaryNumbers(input.getOdd(), input.getEven());
-        clickOnElementsOfNature(input.getElementsOfNatures());
+        selectSummaryNumbers(input.getSummary().get(0), input.getSummary().get(1));
+        clickOnElementsOfNature(input.getElements());
         selectColor(input.getColor());
-        selectMetal(input.getMetal());
+        selectMetal(input.getMetals());
         selectVegetables(input.getVegetables());
         submit();
     }
