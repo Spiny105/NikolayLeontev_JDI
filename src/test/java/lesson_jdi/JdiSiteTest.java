@@ -23,7 +23,6 @@ public class JdiSiteTest {
 
     @DataProvider(name = "MetalsAndColorsDataProvider")
     public Object[] MetalsAndColorsDataProvider() {
-
         Map<String, MetalsAndColorsInput> inputDataSets = new HashMap<>();
         Gson gson = new Gson();
         try {
@@ -51,8 +50,9 @@ public class JdiSiteTest {
 
     @Test(dataProvider = "MetalsAndColorsDataProvider")
     public void testScenario(MetalsAndColorsInput inputData) {
-
+        // TODO This call should not be here
         JdiSite.homePage.driver().manage().deleteAllCookies();
+        // !TODO
         JdiSite.open();
         JdiSite.homePage.login(Defaults.DEFAULT_USER);
         JdiSite.homePage.assertLoggedIn(Defaults.DEFAULT_USER);
